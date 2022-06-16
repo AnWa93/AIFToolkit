@@ -14,10 +14,6 @@ Section: Templates
 
 At the end of this document, there are "examples". This is a lie. These are templates that can act as starting points for your projects. Simply read the instructions then copy-paste them into your project, writing what you want.
 
-Section: Contact
-
-You can contact me at anotherwannabe93@gmail.com. If you have any specific questions about how to implement things, I'll try and add it to this text file.
-
 Chapter: Basic Stuff
 
 This chapter goes over very basic things that would be useful to all AIF writers. It's recommended you take a glance at all the examples in this section before writing your first game.
