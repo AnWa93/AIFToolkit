@@ -1,0 +1,883 @@
+"The Concession Stand" by Another Wannabe
+
+Include Basic Screen Effects by Emily Short.
+Include Basic Help Menu by Emily Short.
+Include Disambiguation Control by Jon Ingold.
+Include Simpler AIF by Another Wannabe.
+Include Advanced Layered Clothing by Another Wannabe.
+Include Orgasms and Arousal by Another Wannabe.
+Include Penetration by Another Wannabe.
+
+Use American dialect.
+Use serial comma.
+Use no scoring.
+Use no face-fucking.
+Use discard clothes after stripping.
+Use automated examining.
+Use no sex prose whilst orgasming.
+Use continuous actions.
+
+The story headline is "A Small AIF Game".
+The story genre is "Erotica".
+The release number is 1.
+The story description is "A minicomp-sized game about seducing the girl who gives popcorn at the theater."
+
+Release along with an interpreter and the source text.
+
+VOLUME I - RULES
+
+PART II - Typography
+
+Chapter 1 - Typographic Shorthand
+
+section a - paragraph control shorthand
+
+To say lb -- running on
+	(documented at phs_linebreak):
+	(-  new_line; -) .
+To say nlb -- running on
+	(documented at phs_nolinebreak): do nothing.
+To say cpb -- running on
+	(documented at phs_condparabreak):
+	(-  DivideParagraphPoint(); -) .
+To say ccb -- running on
+	(documented at phs_clarifbreak):
+	(-  CommandClarificationBreak(); -) .
+To say pb -- running on
+	(documented at phs_parabreak):
+	(-  DivideParagraphPoint(); new_line; -) .
+To say rpo -- running on
+	(documented at phs_runparaon):
+	(-  RunParagraphOn(); -) .
+
+section b - typographical shorthand
+
+To say bt -- running on
+	(documented at phs_bold):
+	(-  style bold; -) .
+To say lt -- running on
+	(documented at phs_italic):
+	(-  style underline; -) .
+To say rt -- running on
+	(documented at phs_roman):
+	(-  style roman; -) .
+To say fls -- running on
+	(documented at phs_fixedspacing):
+	(-  font off; -) .
+To say vls -- running on
+	(documented at phs_varspacing):
+	(-  font on; -) .
+
+Chapter 2 - Addition Typographic Functions
+
+section a - pause game
+
+To prompt for keypress:
+	say "[lt]Press any key...[rt][pb]";
+	wait for any key.
+
+
+BOOK 2 - WORLD MODELING
+
+PART I - Sex
+
+Chapter 1 - Optional Body Parts
+
+
+Some hair is a part of every man. Some hair is a part of every woman.
+A bodily construction rule:
+	now your hair is part of the player.
+A face is a part of every man. A face is a part of every woman.
+A bodily construction rule:
+	now your face is part of the player.
+Some eyes are a part of every man. Some eyes are a part of every woman.
+A bodily construction rule:
+	now your eyes are part of the player.
+Some legs are a part of every man. Some legs are a part of every woman.
+A bodily construction rule:
+	now your legs are part of the player.
+A tummy is a part of every man. A tummy is a part of every woman.
+A bodily construction rule:
+	now your tummy is part of the player.
+
+Chapter 2 - Complex Body Part Naming
+
+
+First before printing the name of a body part (called the z):
+	if z is enclosed by a person (called X):
+		if X is the player:
+			say "your ";
+		else if X is the last partner specified:
+			if X is male:
+				say "his ";
+			else:
+				say "her ";
+		else:
+			say "[printed name of X]'s ".
+			
+Rule for printing the name of a body part (called the item):
+	if the item are breasts:
+		say "breasts";
+	else if the item is an ass:
+		say "ass";
+	else if the item is an pussy:
+		say "pussy";
+	else if the item is an hair:
+		say "hair";
+	else if the item is an face:
+		say "face";
+	else if the item is an eyes:
+		say "eyes";
+	else if the item is an legs:
+		say "legs";
+	else if the item is an tummy:
+		say "tummy";
+	else if the item is an cock:
+		say "cock";
+	else:
+		say "body part".
+
+Chapter 3 - Sex Action Consolidation
+
+[Pasted in from the Simpler AIF plug-in]
+Redirect an actor fucking something penile with something orificial (this is the penile-focused fucking rule):
+	if the noun is enclosed by a person (called the individual):
+		try the individual fucking the second noun with the noun;
+	else:
+		continue the action.
+
+Chapter 4 - Orgasm & Arousal Modifications
+
+The orgasm threshold of a person is usually 100.
+
+section a - sensitivity rules
+
+[This number defines how fast senstivity goes up.]
+A body part has a number called the #sensitivity. The #sensitivity is usually 0.
+A body part has a number called the #minsense. The #minsense is usually 0.
+
+The #sensitivity of a cock is usually 10. The #minsense of a cock is usually 6.
+The #sensitivity of a pussy is usually 10.  The #minsense of a pussy is usually 6.
+The #sensitivity of an ass is usually 10.  The #minsense of an ass is usually 6.
+The #sensitivity of some breasts are usually 5. The #minsense of some breasts is usually 2.
+
+
+[This number defines what the upper bounds to the arousal of a certain body part.]
+A body part has a number called the maxarousal. The maxarousal is usually -1. The maxarousal of breasts are 80. The maxarousal of hair is 20. The maxarousal of a face is 40. The maxarousal of eyes are 20. The maxarousal of legs are 40. The maxarousal of a tummy is 40.
+
+Sensitivity rule for a body part (called the item):
+	let X be a random number between #minsense of the item and the #sensitivity of the item;
+	let Y be X + the arousal of the holder of the item;
+	if the maxarousal of the item is not -1 and the maxarousal of the item is less than Y:
+		now X is the maxarousal of the item - the arousal of the holder of the item;
+	rule succeeds with result X.
+
+section b - random arousal decay
+
+The arousal decay rule is not listed in the every turn rulebook.
+Every turn (this is the custom arousal decay rule):
+	repeat with partner running through people:
+		unless the arousal of the partner is less than 1 or the partner is listed in the sexually active list:
+			let N be a random number between 3 and 5;
+			unarouse the partner by N.
+
+The reset the primary orgasmer's arousal rule is not listed in the after handling an orgasm rulebook.
+The reset the secondary orgasmer's arousal rule is not listed in the after handling an orgasm rulebook.
+
+After handling an orgasm (this is the people still excited after orgasming rule):
+	if the primary orgasmer is a person:
+		now the arousal of the primary orgasmer is 21;
+	if the secondary orgasmer is a person:
+		now the arousal of the secondary orgasmer is 21.
+
+
+section c - new table of arousal states (in place of Section - Table of Arousal States in Orgasms and Arousal by Another Wannabe)
+
+Table of Arousal States
+arousal state	minarouse	maxarouse
+unaroused	-1	0
+tepid	1	20
+excited	21	80
+very excited	81	100
+orgasmic	101	-1
+
+
+section d - new table of erection states (in place of Section - Table of Erection States in Orgasms and Arousal by Another Wannabe)
+
+Table of Erection States
+erection state	minarouse	maxarouse	sexsuitable
+flaccid	-1	0	false
+semi-flaccid	1	20	false
+hardening	21	60	true
+erect	61	-1	true
+
+section e - examining
+
+After examining a person:
+	say "[The person described] [look] [arousal state of person described]."
+
+After examining a cock:
+	if the cock is incorporated by a person (called X):
+		say "It is [erection state of X]."
+
+section f - notifying a player near orgasm
+
+Report an actor rubbing a body part enclosed by the player:
+	if the noun is potentially orgasmic and the arousal of the player is greater than 90:
+		say "You are very close to orgasm!"
+
+Report an actor licking a body part enclosed by the player:
+	if the noun is potentially orgasmic and the arousal of the player is greater than 90:
+		say "You are very close to orgasm!"
+
+Report fucking something with a body part enclosed by the player:
+	if the noun is potentially orgasmic and the arousal of the player is greater than 90:
+		say "You are very close to orgasm!"
+
+Report an actor fucking a body part with something when the noun is enclosed by the player:
+	if the noun is potentially orgasmic and the arousal of the player is greater than 90:
+		say "You are very close to orgasm!"
+
+section g - rubbing asses do not cause orgasm
+
+The rubbed noun is a truth state that varies.
+
+Mid-action bookkeeping rule for an actor rubbing something:
+	now the rubbed noun is true.
+
+Sensitivity rule for an ass when the rubbed noun is true:
+	rule succeeds with result 0.
+
+Post-action bookkeeping rule:
+	now the rubbed noun is false.
+
+Chapter 5 - Clothing
+
+section a - quickly getting out of clothing
+
+Rule for implicitly stripping off a garment (called the item):
+	if an erotic scene is happening:
+		say "([one of]practically ripping off[or]hastily removing[or]stumbling out of[or]excitedly stripping off[at random] [the item])[line break]";
+	else:
+		say "(taking off [the item])[line break]";
+	silently try the person asked stripping off the item.
+
+Rule for implicitly stripping off a garment (called the item) when the person asked is Lilah:
+	say "([one of]boredly removing [the item][or]taking off [the item], sighing[or]stripping off [the item] in a business-like way[stopping])[line break]";
+	silently try the person asked stripping off the item.
+
+The default implicit stripping rule is not listed in the for implicitly stripping off rulebook.
+
+
+section b - dressing
+
+Rule for implicitly wearing shoes (called the item):
+	 if the person asked is not carrying the item:
+		 say "(picking and lacing up [the item])[line break]";
+		 silently try the person asked taking the item;
+		 silently try the person asked wearing the item;
+	 else:
+		 say "(lacing up [the item])[line break]";
+		 silently try the person asked wearing the item.
+
+Rule for implicitly wearing pants (called the item):
+	 if the person asked is not carrying the item:
+		 say "(picking and zipping up [the item])[line break]";
+		 silently try the person asked taking the item;
+		 silently try the person asked wearing the item;
+	 else:
+		 say "(zipping up [the item])[line break]";
+		 silently try the person asked wearing the item.
+
+Rule for implicitly wearing a garment (called the item):
+	 if the person asked is not carrying the item:
+		 say "(picking and slipping on [the item])[line break]";
+		 silently try the person asked taking the item;
+		 silently try the person asked wearing the item;
+	 else:
+		 say "(slipping on [the item])[line break]";
+		 silently try the person asked wearing the item.
+
+The standard implicitly wearing something rule is not listed in the for implicitly wearing rulebook.
+
+
+section c - dressing before going
+
+Before going (this is the dress before leaving rule):
+	unless the ensemble of the outfit of the player matches the list of garments worn by the player in any order:
+		say "Oh shit... you should probably get back into your clothes before you leave.";
+		try the player dressing into the outfit of the player.
+	
+section d - examining discarded clothing
+
+To lay is a verb.
+Instead of examining a garment not worn by a person:
+	say "[The noun] [lay] discarded on the ground."
+
+section e - clothing materials
+
+A material is a kind of value. The materials are defined by the Table of Clothing Materials.
+
+Table of Clothing Materials
+material	printed name	feeladjs
+cloth	"cloth"	"nondescript"
+denim	"denim"	"[one of]rough[or]heavy[or]rugged[or]coarse[at random]"
+lace	"lace"	"[one of]embroidered[or]bumpy[or]textured[at random]"
+leather	"leather"	"[one of]cool[or]rugged[or]cracked[or]heavy[at random]"
+suede	"leather"	"[one of]supple[or]soft[or]velvety[or]warm[at random]"
+permanent press	"cloth"	"[one of]smooth[or]plain[or]gentle[or]mild[at random]"
+satin	"satin"	"[one of]smooth[or]silky[or]sleek[or]fluid[at random]"
+insulated	"cloth"	"[one of]thick[or]plush[or]yielding[at random]"
+
+Every garment has a material. The material of a garment is usually cloth.
+
+To say the material of (N - a garment):
+	say the printed name of the material of N.
+
+To say the texture of (N - a garment):
+	say "[feeladjs of material of N]".
+
+section f - rub through
+
+A garment can be rubthru. A garment is usually rubthru.
+
+Last check an actor rubbing a body part (this is the see whether the garment can be rubbed through rule):
+	unless the noun is exposed:
+		repeat with X running through garments worn by the sex partner:
+			if X could fit over the noun and X is not rubthru:
+				say "[The x] [are] too thick to rub through." instead.
+				
+section g - altenative obstructed clothing responses
+
+[After rubbing a body part which is not exposed:
+	if the noun is enclosed by the player:
+		say ""]
+
+BOOK 3 - LIBRARY MESSAGES
+
+Table of Failure Responses (amended)
+rule name	message
+the can't kiss anything but people rule	"That looks disgusting to kiss."
+the can't kiss one's self rule	"That would require some weird time-warping shit."
+the can't lick one's own ass rule	"That's disgusting as well as impossible."
+the can't lick one's own cock rule	"You'd never leave the house if you could do that."
+the can't lick one's own face rule	"That act is of dubious erotic value."
+the can't lick one's own legs rule	"Theoretically possible, but you aren't flexible enough."
+the can't lick one's own tummy rule	"Theoretically possible, but you aren't flexible enough."
+the can't lick one's own chest rule	"Theoretically possible, but you aren't flexible enough."
+the can't lick just anything rule	"[The noun] [are] probably covered with germs."
+the can't fuck something with itself rule	"Uh, yeah, physics, dude."
+the can't fuck yourself with a part of yourself rule	"Your cock isn't prehensile."
+the can't fuck with someone else's body part rule	"You can't just take [the second noun] to fuck with, why don't you ask them instead?"
+the can't wear a garment over clothes rule	"You know, you can't just slather clothes all over yourself."
+the can't wear things with incompatible anatomy rule	"Uh, for some reason, [regarding the noun][those] just won't fit your anatomy."
+the can't strip things that aren't being worn rule	"[regarding the noun][Those] [are] already off, so that's settled."
+the can't strip off a garment over clothes rule	"You are wearing [the blocking garment] over [the noun]."
+the check outfit ownership rule	"[Regarding the noun][Those] [don't] belong to you."
+
+BOOK 4 - HELP
+
+
+
+VOLUME II - GAME WORLD
+
+
+BOOK 2 - CHARACTERS
+
+
+PART I - The Player Character
+
+The player is male.
+	The player is heterosexual.
+	The description is "".
+
+Chapter 1 - Our Body Parts
+
+The pdesc of your ass is "Your ass is bare and exposed."
+The pdesc of your cock is "Your cock is pretty big. Of course."
+The pdesc of your hair is "Your hair is shaved close to your scalp, leaving you nearly bald."
+The pdesc of your face is "You consider yourself handsome, if no one else does."
+The pdesc of your eyes are "You've got dull, uninteresting eyes of no particular shade."
+The pdesc of your tummy is "You have a flat stomach."
+
+Chapter 2 - Our Clothes
+
+section a - clothes
+
+The grey hoodie is a coat worn by the player.
+	The pdesc is "Your grey hoodie is a size too large for you and frumps up around your midsection."
+	It is insulated.
+The black shirt is a shirt worn by the player.
+	The pdesc is "You wear a black shirt."
+	It is permanent press.
+The blue jeans are pants worn by the player.
+	The pdesc is "The blue jeans you wear are a classic choice."
+	It is denim.
+The white briefs are underwear worn by the player.
+	The pdesc is "A pair of tight, white briefs really makes your package look nice and big."
+	It is permanent press.
+The black boots are shoes worn by the player.
+	The pdesc is "You wear a pair of expensive steel-toed boots."
+	It is leather.
+	It is not rubthru.
+
+section b - outfit
+
+your outfit is a clothing set.
+	The ensemble is {grey hoodie, black shirt, blue jeans, white briefs, black boots}.
+	The outfit of the player is your outfit.
+
+
+
+PART II - Lilah
+
+Lilah is a woman.
+	Lilah is bisexual.
+	
+Rule for writing a paragraph about Lilah:
+	if Lilah is sex ready:
+		if your cock pleasures a body part (called X) incorporated by Lilah:
+			say "Lilah is here, as you are in the middle of fucking Lilah in [the x].";
+		else if Lilah's face pleasures your cock:
+			say "Lilah is on her knees, sucking your cock.";
+		else if your face pleasures a body part (called X) incorporated by Lilah:
+			say "Lilah is here, enjoying your work on [the x].";
+		else:
+			say "Lilah is here, not really smiling, but still with a smouldering 'fuck me' look.";
+	else:
+		say "The concessions girl, Lilah, stands behind the counter, bored."
+
+
+Chapter 1 - Lilah's Body Parts
+
+The pdesc of Lilah's breasts are "Lilah has small, cute breasts. Large enough to be a handful, but not so small you feel creepy."
+The pdesc of Lilah's ass is "Lilah has a good rump on her, a nice firm ass that looks very spankable."
+The pdesc of Lilah's pussy is "Apparently, Lilah doesn't dye her lower hairs like she does the ones on her head. She has, as far as you know in your experience, a perfectly nice pussy."
+The pdesc of Lilah's hair is "She has a sweep of purple hair on her head. This is a girl accustomed to dying her hair."
+The pdesc of Lilah's face is "Despite her perpetually bored appearance, Lilah is actually pretty cute, perhaps in a way only she can pull off."
+The pdesc of Lilah's eyes are "Lilah has deep, black eyes."
+The pdesc of Lilah's legs are "Her legs are nothing to write home about, but they're nice enough, you suppose."
+The pdesc of Lilah's tummy is "She's got a flat stomach, with just a bit of belly. The kind you get from being a slacker."
+
+Chapter 2 - Lilah's Clothes
+
+section a - clothes
+
+The uniform shirt is a shirt worn by Lilah.
+	The pdesc is "She wears a button-up shirt, which must be a part of her uniform, with yellow and orange stripes. You get the feeling those aren't exactly her colors. Still, you can see the shape of her small breasts through it."
+	It is permanent press.
+The uniform hat is a hat worn by Lilah.
+	The pdesc is "She has on an orange hat with [fls]Gino's Theaters[vls] emblazoned upon it. A fringe of dyed purple hair escapes from the rim."
+	It is permanent press.
+Lilah wears a bra called the leather bra.
+	The pdesc of the leather bra is "Her bra is bizarre, basically a strip of leather fastened by a safety pin. It must be some subculture thing."
+	The leather bra is suede.
+The black panties is underwear worn by Lilah.
+	The pdesc is "It's a simple triangle of fabric, pretty plain and unadorned."
+	It is permanent press.
+The khaki slacks are pants worn by Lilah.
+	The pdesc is "Lilah wears a pair of simple khaki slacks, work appropriate but do her little favors in the sexiness department."
+	It is denim.
+The tennis shoes are shoes worn by Lilah.
+	The pdesc is "She has on a pair of simple tennis shoes."
+	It is denim.
+
+section b - outfit
+
+Lilah's outfit is a clothing set.
+	The ensemble is {uniform shirt, uniform hat, leather bra, khaki slacks, tennis shoes, black panties}.
+	The outfit of Lilah is Lilah's outfit.
+
+Chapter 3 - Lilah's Conversation
+
+Understand "chainsaw maniac VII" or "maniac VII" or "chainsaw maniac" or "movie" as "[chainsaw maniac]".
+After asking Lilah about "[chainsaw maniac]":
+	say "'I liked the first one,' she says, 'It was pretty gory. The rest of them were pretty much the same movie over and over again.'"
+After asking Lilah about "Lilah":
+	say "[one of]'Oh great, you can read,' she sighs. 'Listen, let's pretend we aren't old friends, shall we?'[or]'Really. I'm not interested in telling you all about [lt]me[rt].'[stopping]".
+Understand "Dino's" or "theater" or "Dino's theater" as "[Dino's theater]".
+After asking Lilah about "[Dino's theater]":
+	say "'It's where I work,' she says, 'I got no attachment to this place.'"
+After asking Lilah about "food":
+	say "'It's all fake, processed shit,' she sighs. 'What would you prefer: pink slime hot dogs, plastic nacho cheese, or corn syrup candy crap?'"
+After asking Lilah about "hot dog/dogs":
+	say "'I wouldn't eat them,' she tells you blandly, 'they've been sitting in that rolling thingie for at least a week.'"
+After asking Lilah about "candy":
+	say "'Pretty much anyone who gets candy is overweight to the point of gross,' she says, 'I wouldn't risk it.'"
+After asking Lilah about "nacho/nachoes":
+	say "'If my poo was yellow and I ate plastic all day, it would still be closer to cheese than whatever they put on those nachoes.'"
+After asking Lilah about "popcorn":
+	say "'The popcorn is the worse. I sweat someone pees down the kettle.'"
+After asking Lilah about "me":
+	say "'Go suck a dick,' she says."
+	
+After asking Lilah about text:
+	say "Lilah looks terribly bored with that question."
+Instead of telling Lilah about text:
+	say "You doubt you could say anything that could capture Lilah's interest."
+Instead of giving something to Lilah:
+	say "You can already hear the sigh she'll have."
+
+Chapter 4 - Lilah Refusal Messages
+
+
+Issue failure message rule when the actor is Lilah (this is the issue message of failure for Lilah's actions rule):
+	if the reported reason is a rule name listed in the Table of Lilah Failure Responses:
+		say "[message entry][paragraph break]";
+	else:
+		continue the action.
+
+Table of Lilah Failure Responses
+rule name	message
+the can't kiss anything but people rule	"'Fuck no I won't kiss that!'"
+the can't kiss one's self rule	"Lilah's eyes screw together, as if unsure how that would work."
+the can't lick one's own pussy rule	"'Sorry. Even if I could do that, I don't even like the tase of pussy.'"
+the can't lick one's own ass rule	"'There's some people who think their shit doesn't stink. I'm not one of those people.'"
+the can't lick one's own face rule	"'Uh... yeah, that's completely retarded.'"
+the can't lick one's own legs rule	"'What, like... my thighs or something?'"
+the can't lick one's own tummy rule	"'Sure. Let me just twist off my head and then let me smear my lolling tongue all over my nubile body.'"
+the can't lick just anything rule	"'That's fucking gross, I'm not going to contract some disease by licking [the noun].'"
+the can't wear two strap-ons rule	"'How the fuck are you reading this? There aren't even strap-ons in this game.'"
+the block attempts to fuck rule	"'I'm not fucking that,' she says with a finality."
+the can't fuck something with itself rule	"'Yeah. Carl Sagan told me once in a documentary that's totally not possible.'"
+the can't fuck yourself with a part of yourself rule	"'Oh my god. That sounds like kinky shit I'm totally not into.'"
+the can't fuck with someone else's body part rule	"'What? You want me to, like, rip off [the second noun] or something?'"
+the can't fuck with something not fuckable rule	"'Uh, yeah, putting [the second noun] up there is totally unhygenic.'"
+the can't strip things that aren't being worn rule	"'I've already taken that off,' she points out with a sigh."
+the can't strip things that aren't people rule	"'Uh... yeah, that shit doesn't wear clothes, idiot.'"
+can't strip people who aren't wearing anything rule	"'Dude, I'm fucking naked. You want me to take my skin off or something?'"
+the can't pick up an outfit component of someone else rule	"'Yeah dude, that seems to belong to you.'"
+the NPCs can't take garments not in their clothing set rule	"'Yeah dude, that seems to belong to you.'"
+
+
+
+BOOK 3 - ROOMS
+
+
+PART I - Movie Theater
+
+Chapter 1 - Auditorium
+
+The auditorium is a room.
+	"The auditorium is dark and sparsely populated. It looks like not many people came to see the movie. It's hidden by a divider, but the exit is east of here."
+
+section a - atmospheric details
+
+Every turn when the player is in the auditorium:
+	 if a random chance of 1 in 6 succeeds:
+		say "[lt][one of]Suddenly, a chainsaw-wielding maniac bursts through the cabin doors[or]The chainsaw wielding maniac hacks off the limbs of a screaming teenager[or]One of the teenagers is running through the forest, when he suddenly trips[or]One of the onscreen teenagers is trapped at the end of a pier, with the maniac just on the other end[or]In one swift motion, the maniac hacks off the head of a hapless teen[or]One of the teens hides in a closet, she can't suppress her racing breath as the killer walks into the room[at random].[rt]".
+
+section b - funny messages
+
+%itsdark is a truth state that varies.
+After stripping off something in the auditorium when %itsdark is false:
+	say "Well, it's not like anyone can see you anyway...";
+	now %itsdark is true;
+	continue the action.
+
+After rubbing your cock in the auditorium when %itsdark is false:
+	say "Well, it's not like anyone can see you anyway...";
+	now %itsdark is true;
+	continue the action.
+
+Shouting spoilers is an action applying to nothing.
+	Understand "say spoilers" as shouting spoilers.
+
+Report shouting spoilers:
+	say "There's no one to ruin the movie for here."
+
+After shouting spoilers in the auditorium:
+	say "You shout: '[one of]The chainsaw maniac dies at the end[or]It turns out the nerd was the chainsaw maniac all along[or]Dumbledore dies! And also is gay[or]The slutty teen is gonna get killed[or]The only survivor is the Christian virgin[or]It turns out the only bridge out of the valley is blown up[at random]!'[pb]You hear back, '[one of]We already knew that, asshole[or]Shut the fuck up dude, I'm making out over here[or]Spoiler alert: you're gonna get jumped, asshole[or]Hey man, I was sleeping over here[or]Hey, your shouting is killing my boner[at random]!'".
+
+section c - scenery
+
+The movie is scenery.
+	It is in the auditorium.
+	Understand "chainsaw" and "maniac" and "VII" as the movie.
+
+Instead of examining the movie:
+	say "You didn't exactly have high expectations for [lt]Chainsaw Maniac VII[rt], but this is honestly a lot worse than you expected. It's dull. It's not nearly as funny as earlier installments, and you can't guess what they were even thinking when they set it back in the lake of the first movie. It's like a remake with a different set of teens."
+Instead of doing something other than examining to the movie:
+	say "It's fiction. You can't exactly reach out and touch it."
+
+The audience is scenery.
+	It is in the auditorium.
+	The description is "It's likely just a bunch of teens making out in the seats. At least, you aren't hearing any gasps of fright."
+
+Chapter 2 - Concessions
+
+The concession stand is a room.
+	"The concessions stand is almost deserted, but brightly lit by neon advertisements.  Movie posters plaster the opposite wall. The auditorium is back west, while the theater exit is north."
+	It is east of the auditorium.
+	Lilah is here.
+
+section a - exiting
+
+Instead of going north in the concession stand:
+	say "Exiting the theater will make the game end. Are you sure?[pb][lt]Enter yes or no for confirmation[rt].";
+	if the player consents:
+		say "You leave the theater the way you came. Eventually you die.";
+		end the story saying "YOU DIED!";
+	else:
+		say "No. It's [lt]carpe diem[rt] time. You've got work to do!"
+
+section b - scenery
+
+The advertisements are scenery.
+	The description is "Just above the stand, there's a list of overpriced food items. It's painful even looking at it. $5 for a box of candy and $8 for a hot dog. Who the fuck are these people?"
+	They are plural-named.
+	They are in the concession stand.
+	
+Instead of taking the advertisements:
+	say "You could claw uselessly at the advertisements, but the hard plastic would chip your manicure."
+
+The movie posters are scenery.
+	The description is "Most of them are for [lt]Chainsaw Maniac VII[rt] and show the titular Chainsaw Maniac holding aloft his chainsaw like a chainsaw Jesus."
+	They are plural-named.
+	They are in the concession stand.
+
+Instead of taking the movie posters:
+	say "One day the posters might be novelty. But not right now."
+
+VOLUME III - SCENES
+
+When play begins:
+	say "[lt]AUTHOR'S NOTE[pb]This is a sample game for the AIF Toolkit. As such... it isn't that great. It's not supposed to be. It's purely designed to illustrate what can be done with the AIF Toolkit. This game is completely open source so do whatever you want with it.[rt][pb]Damn. You thought you had a hot date line up tonight. Who'd refuse a ticket to go see Chainsaw Maniac VII?[pb]Well, fuck it. This movie isn't good enough to keep you on your seat. You were gonna get laid, and damn it you [lt]will[rt] be laid. Even if you have to find someone in the theater."
+
+Chapter 1 - In the Theater
+
+scene1 is a scene. scene1 begins when play begins. scene1 ends when the player is in the concession stand.
+
+Chapter 2 - Seducing Lilah
+
+scene2 is a scene. scene2 begins when scene1 ends. scene2 ends when Lilah is sex ready.
+
+When scene2 begins:
+	say "It looks like most people have gone home for the night, except for a lone girl at the concession stand. She's skinny, and slouched over a magazine, and beneath her little hat she's got a fringe of purple hair. She's cute, in that 'punk chick next door' kinda way. She rolls her eyes when she sees you.[pb]'Hey,' she yawns, 'can I help you with something?'[pb]Hmm... perhaps she'd be a good alternative. You read her nametag, [fls]Lilah[vls], it says."
+
+After asking Lilah about "sex":
+	if Lilah is sex ready:
+		say "'We're fucking, aren't we?' she says, eyebrow raised.";
+	else:
+		say "It gets a little tiring playing games, sometimes. 'Wanna have sex?' you ask her.[pb]Lilah thinks a moment, and shrugs. 'OK.'[pb]Right. That was easy.";
+		now Lilah is sex ready.
+
+Instead of sexual behavior in the presence of Lilah during scene2:
+	if the noun is something enclosed by Lilah or the noun is Lilah:
+		say "You didn't take sensitivity courses in college but you're pretty sure doing that to someone without warning is illegal.";
+	else:
+		say "Not while Lilah is watching!"
+
+Chapter 3 - Fucking Lilah
+
+scene3 is an erotic scene. scene3 begins when scene2 ends.
+
+section a - self player actions
+
+[In a bigger game where certain characters have multiple scenes, it might be useful to add conditions, for example:
+
+Sex prose for rubbing your ass during scene2:
+	say "XXX."]
+
+Instead of rubbing your ass:
+	say "You doubt anyone would find that sexy."
+Instead of rubbing your face:
+	say "You doubt anyone would find that sexy."
+Instead of rubbing your tummy:
+	say "You doubt anyone would find that sexy."
+Instead of rubbing your legs:
+	say "You doubt anyone would find that sexy."
+	
+Sex prose for rubbing your cock:
+	if the player is in the auditorium:
+		say "You surreptitiously begin massaging your cock[if the noun is not exposed] through the [the texture of the obstructing garment] [material of the obstructing garment][end if], feeling it harden under self-minstration.";
+	else:
+		if the noun is exposed:
+			say "You grasp your cock, pumping it furiously and letting that ecstatic, orgasmic potential build up in your loins.";
+		else:
+			say "You put on a show rubbing your cock through [the obstructing garment], your fingers tracing a growing outline.";
+		if Lilah is visible:
+			say "Lilah doesn't seem especially impressed."
+
+Orgasm prose for rubbing your cock:
+	if the player is in the auditorium:
+		say "[one of]You come in the theater. It's a cheap thrill, masturbating in public, although you shouldn't feel too proud of this 'achievement' of yours[or]As you orgasm in the theater once again, you have to admit to yourself how easily entertained you are[stopping].";
+	else:
+		say "[one of]You blow your load in front of Lilah, which manages to spray on the ground.[pb]'Well, that was a waste... not that I care or anything.'[or]You blow your load one more time, hitting the same patch of ground as before. Lilah rolls her eyes. 'Seriously? Again?'[stopping]".
+
+section b - Lilah self actions
+
+Instead of Lilah licking Lilah's breasts:
+	say "[one of]Lilah looks down at her tits, weighing them with both hands.[pb]'I don't think they're big enough,' she muses, but sticks out her tongue anyway. It doesn't go out very far[or]'Sorry, my boobs aren't big enough,' she shrugs[stopping]."
+
+Sex prose for Lilah rubbing Lilah's ass:
+	if Lilah's ass is not exposed:
+		say "[one of]Lilah pulls the [the material of the obstructing garment] of [the obstructing garment] over her ass[or]She gives her ass a spank beneath the fabric of [the obstructing garment][at random].";
+	else:
+		say "[one of]Lilah gives her ass a nice massage, seperating her cheeks out for you[or]Lilah strokes the outside of the dark hole with a long fingernail[at random]."
+
+Instead of Lilah rubbing Lilah's face:
+	say "That would be quite boring... you aren't sure Lilah would get anything out of it either."
+Sex prose for Lilah rubbing Lilah's tummy:
+	if Lilah's tummy is not exposed:
+		say "Lilah playfully pats the [the material of the obstructing garment] of [the obstructing garment] over her stomach.";
+	else:
+		say "Lilah strokes the curve of her stomach with the very ends of fingernails."
+Sex prose for Lilah rubbing Lilah's legs:
+	if Lilah's legs are not exposed:
+		say "Lilah runs her fingers up and down the [the material of the obstructing garment] over her legs.";
+	else:
+		say "Lilah gently strokes her thighs, seperating them to give you a sensual show."
+
+Sex prose for Lilah rubbing Lilah's breasts:
+	if Lilah's breasts are not exposed:
+		say "Lilah fondles her own breasts, tugging sensuously at the [the material of the obstructing garment].";
+	else:
+		say "Lilah rubs her hardened nipples in a sensual display."
+		
+%askmasturbate is a truth state that varies.
+Sex prose for Lilah rubbing Lilah's pussy:
+	if %askmasturbate is false:
+		say "Lilah lifts an eyebrow. 'You wanna watch me masturbate? When I'm pretty much ready to jump on your boner? Well... alright then.'";
+	if Lilah's pussy is not exposed:
+		find the garments covering Lilah's pussy;
+		say "Lilah rips off [the obstructing garment list].";
+		repeat with K running through the obstructing garment list:
+			now K is in the location of Lilah;
+	say "[one of]Lilah delicately feels her pussy, pressing her fingers into her folds[or]She rubs her clit, letting her fingertips run over her little nub[or]She sensuously rubs her pussy, smearing wetness all over herself[at random]."
+
+Orgasm prose for Lilah rubbing Lilah's pussy:
+	say "Lilah yelps with one last thrust of her finger, and suddenly she gushes all over the floor."
+
+section c - interacting with Lilah
+
+
+After penetrating Lilah's ass with your face:
+	say "Lilah gives a chipmunk squeal as you lower your face to eat her little ass."
+After penetrating Lilah's tummy with your face:
+	say "You pin Lilah to the ground, and give her tummy several long, luscious licks."
+After penetrating Lilah's legs with your face:
+	say "With Lilah's back on the ground, you start to suck on Lilah's toes."
+After penetrating Lilah's pussy with your face:
+	say "You hoist Lilah's legs up and bury your face into her snatch."
+After penetrating Lilah's breasts with your face:
+	say "You pin Lilah to the ground and begin to kiss and fondle her breasts."
+
+After penetrating Lilah's ass with your cock:
+	say "After a squeal from Lilah, you manage to fit your fat cock into Lilah's asshole."
+After penetrating Lilah's pussy with your cock:
+	say "Your well-lubricated cock slips easily into Lilah's pussy."
+After penetrating Lilah's breasts with your cock:
+	say "Using a gob of precum, you lubricate Lilah's chest and use whatever fleshiness you can to jam your cock into."
+
+
+Sex prose for kissing Lilah:
+	say "You make out with Lilah furiously."
+Sex prose for rubbing Lilah's ass:
+	say "With two sweaty palms, you fondle Lilah's ass[if Lilah's ass is not exposed] even beneath [the obstructing garment][end if]."
+Sex prose for rubbing Lilah's tummy:
+	say "You knead the soft flesh around Lilah's tummy."
+Sex prose for rubbing Lilah's legs:
+	say "You run you hands up and down her delectable thighs."
+Sex prose for licking Lilah's ass:
+	say "With Lilah on her hands and knees, you shower her little dark star with kisses."
+Sex prose for licking Lilah's legs:
+	say "You continue to suck on Lilah's little piggies."
+Sex prose for licking Lilah's tummy:
+	say "You leave streams of saliva up and down Lilah's stomach."
+
+Sex prose for rubbing Lilah's breasts:
+	if Lilah's breasts are exposed:
+		say "You paw at Lilah's tits with an unbecoming excitement, your mouth salivating.";
+	else:
+		let N be the chest garment of Lilah;
+		say "You fondle Lilah's breasts beneath the [the material of N]."
+		
+Sex prose for rubbing Lilah's pussy:
+	unless Lilah's pussy is exposed:
+		say "Lilah coos as you stroke her soft slit beneath [the obstructing garment].";
+	else:
+		say "[one of]You insert your pinky finger into Lilah's pussy, you watch her squirm for a bit[or]You thrust your index and middle finger into her quim[at random]."
+Sex prose for licking Lilah's breasts:
+	say "You suck on each of Lilah's nipples in turn."
+Sex prose for licking Lilah's pussy:
+	say "Lilah huffs as you lick and eat her folds."
+
+Sex prose for fucking Lilah's breasts with your cock:
+	say "You slide your cock up and down Lilah's lubricated tits."
+Sex prose for fucking Lilah's ass with your cock:
+	say "You fuck Lilah's tight ass, loving the feel of her tightening ring around your cock."
+Sex prose for fucking Lilah's pussy with your cock:
+	say "You savor the feeling of Lilah's tight pussy around your cock."
+
+Orgasm prose for rubbing Lilah's ass:
+	say "Lilah suddenly cries out in orgasm after all that work on her asshole."
+Orgasm prose for rubbing Lilah's pussy:
+	unless Lilah's pussy is exposed:
+		say "Lilah practically wets herself as she comes into [the obstructing garment].";
+	else:
+		say "A gush of sex fluids coat your fingers as Lilah cries out in orgasm."
+
+Orgasm prose for licking Lilah's ass:
+	say "You stimulate Lilah's little asshole to the point she cries out in a gush of pleasure."
+Orgasm prose for licking Lilah's pussy:
+	say "After a back-arching, flailing orgasm, Lilah spurts all over your face."
+
+Orgasm prose for fucking Lilah's ass with your cock:
+	if the primary orgasmer is the player:
+		say "You spurt, your juices flying into Lilah's colon[first time].[pb][lt]Author's note: Listen, I'm sorry, I'm just trying to write a sample game here[rt][only].";
+	else:
+		say "Your cock strikes her anal g-spot, and she flies into an orgasm the likes of which have never been seen on this Earth."
+
+Orgasm prose for fucking Lilah's pussy with your cock:
+	if the primary orgasmer is the player:
+		say "You come like a freight train, and you fill Lilah's pussy to the breaking point, you know, because that makes sense.";
+	else:
+		say "Lilah has an intense and senseless orgasm."
+		
+Simultaneous orgasm prose for fucking Lilah's ass with your cock:
+	say "You and Lilah orgasm with the fury of a thousand suns, with bits of man cum flying everywhere out of her ass that's been thoroughly reamed because yeah."
+Simultaneous orgasm prose for fucking Lilah's pussy with your cock:
+	say "Like a solar flare you both come, you cry out with a furious orgasmic wail that wipes out remaining life on Mars."
+
+
+section d - npcs interacting with you
+
+Willingness for Lilah licking your ass:
+	say "Lilah looks at your ass with a raised eyebrow. 'I'm not sticking my tongue in that.'"
+Willingness for Lilah rubbing your ass:
+	say "Lilah shakes her head. 'Sorry. Your ass isn't that great.'"
+Willingness for Lilah rubbing your face:
+	say "Lilah lifts an eyebrow. 'What the fuck is that?'"
+Willingness for Lilah rubbing your legs:
+	say "'Nah, I don't do foot rubs.'"
+Willingness for Lilah licking your legs:
+	say "'Nah, I don't lick feet.'"
+
+After Lilah penetrating your tummy with Lilah's face:
+	say "Lilah begins to run her tongue up and down your hard chest."
+After Lilah penetrating your cock with Lilah's face:
+	say "Lilah begins sucking your cock with a pretty skillful tongue."
+
+
+Sex prose for Lilah kissing the player:
+	say "Lilah makes out with you, her tongue swirling inside your mouth."
+Sex prose for Lilah rubbing your tummy:
+	say "Lilah scrapes your hard stomach with her fingernails."
+Sex prose for Lilah licking your tummy:
+	say "Lilah gives you sloppy kisses all over your stomach."
+
+
+Sex prose for Lilah rubbing your cock:
+	if your cock is exposed:
+		say "Lilah gives you an excellent handjob.";
+	else:
+		say "Lilah strokes the outline of your cock through [the obstructing garment]."
+Sex prose for Lilah licking your cock:
+	say "Lilah sucks your cock. It feels really good as she runs her tongue all over it."
+
+Orgasm prose for Lilah rubbing your cock:
+	say "You blast your load as Lilah rubs your cock."
+
+Orgasm prose for Lilah licking your cock:
+	say "You come right into Lilah's open mouth."

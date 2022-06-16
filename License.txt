@@ -1,0 +1,23 @@
+The AIF Toolkit by AW Freyr (aka Another Wannabe) is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+***
+FAQ
+***
+
+Q: Can I edit the AIF Toolkit?
+A: Yes.
+
+Q: Can I redistribute the AIF Toolkit? What about modified versions of the AIF Toolkit?
+A: Yes, though it would be nice if you let me know first. With modified versions, please remove my email from the documentation. It would also be nice to rename it to avoid confusion.
+
+Q: Can I redistribute the AIF Toolkit but pass it off as my own original work?
+A: No.
+
+Q: Can I use the AIF Toolkit to make commercial projects?
+A: Absolutely, though it would be nice to get a free copy of the project.
+
+Q: Can I sell the AIF Toolkit?
+A: I'd prefer you not.
+
+Q: Are you a pony?
+A: No.
