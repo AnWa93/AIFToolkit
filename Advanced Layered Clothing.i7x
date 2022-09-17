@@ -1,10 +1,10 @@
-Version 11 of Advanced Layered Clothing by Another Wannabe begins here.
+Version 12 of Advanced Layered Clothing by Another Wannabe begins here.
 
 "An add-on for Simpler AIF that adds layered clothing."
 
-Include version 12 of Simpler AIF by Another Wannabe.
+Include Simpler AIF by Another Wannabe.
 
-Part - No Simple Clothing (in place of Part - Simpler Clothing in Simpler AIF by Another Wannabe) 
+Part - No Simple Clothing (in place of "Part - Simpler Clothing" in Simpler AIF) 
 
 Part - Set Up
 	
@@ -18,7 +18,7 @@ Use no implicit stripping translates as (- Constant NO_IMPLICIT_STRIPPING; -).
 
 Chapter - Garments and Body Areas
 
-A garment is a kind of thing. A garment is always wearable. A garment can be opaque or transparent. A garment is usually opaque.
+A garment is a kind of thing. A garment is always wearable. [A garment can be opaque or transparent. A garment is usually opaque.]
 A garment has a number called a layer. The layer is usually 1.
 
 A body area is a kind of value. The body areas are the featureless area, feet area, the legs area, the crotch area, the ass area, the tummy area, the chest area, the arms area, the hands area, the face area, the eyes area and the hair area.
@@ -61,7 +61,7 @@ Some gloves are a kind of garment. The plural of gloves is pairs of gloves. They
 [Blocks hair.]
 A hat is a kind of garment. The layer is 1. Understand "hat/headwear" as a hat. The covered areas are {hair area}.
 [Blocks eyes.]
-Some eyewear is a kind of garment. The plural of eyewear is sets of eyewear. They are plural-named and transparent. The layer is 1. Understand "eyewear" as eyewear. The covered areas are {eyes area}.
+Some eyewear is a kind of garment. The plural of eyewear is sets of eyewear. They are plural-named[ and transparent]. The layer is 1. Understand "eyewear" as eyewear. The covered areas are {eyes area}.
 [Blocks the face.]
 A mask is a kind of garment. The layer is 1. Understand "mask" as a mask. The covered areas are {face area}.
 A bodysuit is a kind of garment. The layer is 1. Understand "bodysuit" as a bodysuit. The covered areas are {feet area, legs area, crotch area, ass area, tummy area, chest area, arms area, hands area}.
@@ -1624,6 +1624,10 @@ Section: Compatibility Notes with Threaded Conversations
 ALC and Threaded Conversations are both large extensions and, like all of their kind, are very territorial and prone to kill each other. Version 5 of ALC and Version 2 of TC now get along a bit better, in that they now compile and function, but still eye each other leerily at the seperate ends of their cave.
 
 Section: Version History
+
+	Version 12, September 17th, 2022:
+	-- Updated for compatibility with Inform 7.
+	-- Garments can no longer be defined as transparent or opaque, to fix a compatibility bug.
 
 	Version 11, January 27th, 2015:
 	-- Added functions to retrieve lists of garments covering a particular area.
