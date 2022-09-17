@@ -1,4 +1,4 @@
-Version 4 of Orgasms and Arousal by Another Wannabe begins here.
+Version 5 of Orgasms and Arousal by Another Wannabe begins here.
 
 "Adds an orgasm and arousal system for Simpler AIF by Another Wannabe."
 
@@ -10,7 +10,7 @@ Part - Orgasms
 
 Chapter - Set Up
 
-Orgasm-tracking relates one person to various things. The verb to previously orgasm upon (he previously orgasms upon, they previously orgasm upon, he previously orgasmed upon, it is previously orgasmed upon, he is orgasming upon) implies the orgasm-tracking relation.
+Orgasm-tracking relates one person to various things. The verb to previously-orgasm-upon (he previously-orgasms-upon, they previously-orgasm-upon, he previously-orgasmed-upon, it is previously-orgasmed-upon, he is previously-orgasming-upon) implies the orgasm-tracking relation.
 
 The primary orgasmer is an object that varies. The secondary orgasmer is an object that varies.
 The object cummed with is an object that varies. The object cummed on is an object that varies.
@@ -56,9 +56,9 @@ Rule for handling an orgasm (this is the default orgasm handling rule):
 
 After handling an orgasm (this is the track orgasms rule):
 	if the object cummed on is not nothing:
-		now the primary orgasmer previously orgasms upon the object cummed on;
+		now the primary orgasmer previously-orgasms-upon the object cummed on;
 	if the simultaneous orgasm boolean is true and the object cummed with is not nothing:
-		now the secondary orgasmer previously orgasms upon the object cummed with.
+		now the secondary orgasmer previously-orgasms-upon the object cummed with.
 
 After handling an orgasm (this is the reset the primary orgasmer's arousal rule):
 	clear arousal of the primary orgasmer.
@@ -78,8 +78,8 @@ Chapter - Integration with Erotic Scenes
 
 When an erotic scene (called Y) begins (this is the reset orgasm-tracking rule):
 	repeat with X running through the involved partners of Y:
-		now X previously orgasms upon nothing;
-	now the player previously orgasms upon nothing.
+		now X previously-orgasms-upon nothing;
+	now the player previously-orgasms-upon nothing.
 
 Part - Arousal
 
@@ -440,6 +440,11 @@ Previously, OrA could use Fixed Point Maths by Michael Callaghan. Fixed Point Ma
 
 Section: Version History
 
+	Version 5, September 17th, 2022
+	- IT IS THE FUTURE EVERYONE.
+	- Compatibility update to Inform version 10.
+	- Changed the relation "previously orgasm upon" to "previously-orgasm-upon".
+
 	Version 4, July 18th, 2014
 	- Fixed a bug where female characters trying to fuck a cock are always told it isn't hard enough.
 	- Allow erection states other than "erect" to be fuckable.
@@ -582,13 +587,13 @@ You can even make things not potentially orgasmic.
 
 Section: Orgasm Tracking
 
-Like in Simpler AIF, OrA provides a method of tracking who has orgasmed where. This is done through the "previously orgasms upon" relation.
+Like in Simpler AIF, OrA provides a method of tracking who has orgasmed where. This is done through the "previously-orgasms-upon" relation.
 
-	if the player previously orgasms upon Annette's breasts...
+	if the player previously-orgasms-upon Annette's breasts...
 	
 There is, unfortunately, no way around the awkward wording of things like this:
 
-	if the player previously orgasms upon Taylor's pussy...
+	if the player previously-orgasms-upon Taylor's pussy...
 	
 In most cases, this relation is fairly straightforward, but when a simultaneous orgasm occurs, the secondary orgasmer will be considered to have orgasmed upon whatever the actor had just orgasmed with. So in the case of the player fucking Taylor's pussy with your cock, Taylor will have considered to have cummed on your cock as well.
 
@@ -1015,7 +1020,7 @@ Section: Variables Reference
 
 Section: Relations Reference
 
-	TO PREVIOUSLY ORGASM UPON... thing-to-thing, tracks who has orgasmed where.
+	TO PREVIOUSLY-ORGASM-UPON... thing-to-thing, tracks who has orgasmed where.
 
 Section: Adjectives Reference
 
