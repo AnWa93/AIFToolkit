@@ -1,10 +1,10 @@
-Version 1 of Improved Sex Action Tracking by Another Wannabe begins here.
+Version 2 of Improved Sex Action Tracking by Another Wannabe begins here.
 
 "Adds a less memory intensive method to track sexual relations. Requires Simpler AIF by Another Wannabe."
 
 Include Simpler AIF by Another Wannabe.
 
-Part - Improved Sex Action Tracking (in place of Part - Sex Action Tracking in Simpler AIF by Another Wannabe)
+Part - Improved Sex Action Tracking (in place of "Part - Sex Action Tracking" in Simpler AIF)
 
 A scene can be erotic. A scene is usually not erotic.
 A scene has a list of people called the involved partners.
@@ -22,41 +22,41 @@ Some hands are a part of every man. Some hands are a part of every woman.
 A bodily construction rule:
 	now your hands are part of the player.
 
-Sex-tracking relates things to each other. The verb to previously interact with (he previously interacts with, they previously interact with, he previously interacted with, it is previously interacting with) implies the sex-tracking relation.
+Sex-tracking relates things to each other. The verb to previously-interact-with (he previously-interacts-with, they previously-interact-with, he previously-interacted-with, it is previously-interacting-with) implies the sex-tracking relation.
 
 Post-action bookkeeping rule for an actor rubbing a thing:
-	now the hands of the actor previously interact with the noun.
+	now the hands of the actor previously-interact-with the noun.
 Post-action bookkeeping rule for an actor licking a thing:
-	now the face of the actor previously interacts with the noun.
+	now the face of the actor previously-interacts-with the noun.
 Post-action bookkeeping rule for an actor fucking something with something:
-	now the noun previously interacts with the second noun.
+	now the noun previously-interacts-with the second noun.
 Post-action bookkeeping rule for an actor kissing a person:
-	now the face of the actor previously interacts with the face of the noun.
+	now the face of the actor previously-interacts-with the face of the noun.
 
 When an erotic scene (called the new scene) begins:
 	repeat with N running through the involved partners of the new scene:
 		repeat with K running through the body parts incorporated by N:
-			now K previously interacts with nothing.
+			now K previously-interacts with nothing.
 
 To decide if (K - a person) previously rubs/rub (N - a thing):
-	if the hands of K previously interact with N:
+	if the hands of K previously-interact-with N:
 		decide yes;
 	decide no.
 To decide if (K - a person) previously licks/lick (N - a thing):
-	if the face of K previously interacts with N:
+	if the face of K previously-interacts-with N:
 		decide yes;
 	decide no.
 To decide if (K - a person) previously kisses/kiss (N - a person):
-	if the face of K previously interacts with the face of N:
+	if the face of K previously-interacts-with the face of N:
 		decide yes;
 	decide no.
 To decide if (K - a person) previously fucks/fuck (N - a thing):
 	repeat with L running through the body parts incorporated by K:
-		if N previously interacts with L and L is not a face and (L is orificial or L is penile):
+		if N previously-interacts-with L and L is not a face and (L is orificial or L is penile):
 			decide yes;
 	decide no.
 To decide if (K - a thing) previously fucks/fuck (N - a thing):
-	if K previously interacts with N, decide yes;
+	if K previously-interacts-with N, decide yes;
 	decide no.
 
 Improved Sex Action Tracking ends here.
@@ -97,13 +97,21 @@ Something to bear in mind: all relations are reciprocally tracked. That is: if p
 
 Like in Simpler AIF, at the beginning of an erotic scene all sex tracking for the involve partners are wiped.
 
+Section: Version History
+
+	Version 2, September 17th, 2022
+	- Added hyphens to the verb "previously-interact-with" for consistency.
+
+	Version 1, Prehistoric Times:
+	- Initial Release
+
 Chapter: Advanced
 
 Section: Past Participles
 
 ISAT supports past participles, but they are used somewhat differently from vanilla SAIF. Because I7 does not yet support the use of past participles and variables, phrases will not work. You'll have to write it out like this:
 
-	if SOMETHING previously interacted with SOMETHING ELSE...
+	if SOMETHING previously-interacted-with SOMETHING ELSE...
 	
 Section: Using ISAT with New Actions
 
@@ -112,12 +120,12 @@ The process for using ISAT is slightly different from SAIF.
 First, you'll need to make a post-action bookkeeping rule for the new action. We'll use the footjob example from the SAIF action.
 
 	Post-action bookkeeping rule for an actor footjobbing something:
-		now the feet of the actor previously interact with the noun.
+		now the feet of the actor previously-interact-with the noun.
 		
 Second, you'll need to define the phrase that tests this.
 
 	To decide whether (N - a person) footjobs/footjob (X - a thing):
-		if the feet of N previously interact with X:
+		if the feet of N previously-interact-with X:
 			decide yes;
 		decide no.
 
