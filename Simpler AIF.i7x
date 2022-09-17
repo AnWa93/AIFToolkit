@@ -1,4 +1,4 @@
-Version 16 of Simpler AIF by Another Wannabe begins here.
+Version 17 of Simpler AIF by Another Wannabe begins here.
 
 "An AIF authoring extension that includes the very basics of writing interactive sex scenes."
 
@@ -937,7 +937,7 @@ Persuasion rule for asking a person to try sexual behavior (this is the only can
 
 Part - Simpler Clothing
 
-A person has a number called the worn layers. The worn layers is usually 1.
+[A person has a number called the worn layers. The worn layers is usually 1.
 A person has a number called maximum worn layers. The maximum worn layers are usually 1.
 
 When play begins (this is the populate maximum worn layers rule):
@@ -954,7 +954,7 @@ Understand "wear [piece of clothing]" as a mistake ("There is no need to wear in
 Understand "take off [piece of clothing]", "remove [piece of clothing]", "shed [piece of clothing]" and "strip [piece of clothing]" as a mistake ("There is no need to remove individual pieces of clothing. Just type STRIP.").]
 
 
-Chapter - Stripping and Dressing
+[Chapter - Stripping and Dressing]
 
 Implied stripping is an action applying to nothing. Understand "strip", "take off clothes", "remove clothes" and "shed clothes" as implied stripping.
 
@@ -1032,7 +1032,7 @@ the can't dress if already dressed rule	"[The person asked] [are] already dresse
 the can't dress wearing a strap-on rule	"[The person asked] [can't] [dress] while wearing a strap-on."
 the must be naked to wear a strap-on rule	"[The person asked] must be naked before wearing [the noun]."
 
-Chapter - Blocking Sex Acts Through Clothes
+[Chapter - Blocking Sex Acts Through Clothes]
 
 The particular part is an object that varies.
 
@@ -1077,7 +1077,7 @@ Check an actor fucking something with a sex toy (this is the can't fuck with sex
 Last obstructed sex act for an actor fucking something with a sex toy (this is the default obstructed sex toy fucking rule):
 	say "[The actor] [can't fuck] [the noun] with [the second noun] underneath clothes." (A).
 
-Section - Phrases to Determine What Body Parts are Clothed
+[Section - Phrases to Determine What Body Parts are Clothed]
 
 To decide if (N - a thing) is accessible:
 	if N is not a body part:
@@ -1095,7 +1095,7 @@ To decide if (N - a thing) is not accessible:
 [To decide if the actor is too clothed:
 	if the actor's organ obstructed is true:
 		decide yes;
-	decide no.]
+	decide no.]]
 
 Part - Simple Willingness System
 
@@ -1140,63 +1140,63 @@ Chapter - Tracking
 Section - Tracking Fucking
 
 Fuck-tracking relates things to each other.
-The verb to previously fuck (he previously fucks, they previously fuck, he previously fucked, it is previously fucked, he is previously fucking) implies the fuck-tracking relation.
+The verb to previously-fuck (he previously-fucks, they previously-fuck, he previously-fucked, it is previously-fucked, he is previously-fucking) implies the fuck-tracking relation.
 
 Post-action bookkeeping an actor fucking something with something (this is the track fucking rule):
-	now the actor previously fucks the noun;
-	now the second noun previously fucks the noun;
+	now the actor previously-fucks the noun;
+	now the second noun previously-fucks the noun;
 	if the noun is enclosed by a person (called the individual):
-		now the individual previously fucks the second noun.
+		now the individual previously-fucks the second noun.
 
 Post-action bookkeeping an actor fucking a face with something(this is the reciprocate tracking fucking a face rule):
-	now the holder of the noun previously licks the second noun.
+	now the holder of the noun previously-licks the second noun.
 
 Section - Tracking Licking
 
 Lick-tracking relates various people to various things.
-The verb to previously lick (he previously licks, they previously lick, he previously licked, it is previously licked, he is previously licking) implies the lick-tracking relation.
+The verb to previously-lick (he previously-licks, they previously-lick, he previously-licked, it is previously-licked, he is previously-licking) implies the lick-tracking relation.
 
 Post-action bookkeeping an actor licking a body part (this is the track licking rule):
-	now the actor previously licks the noun.
+	now the actor previously-licks the noun.
 
 Post-action bookkeeping an actor licking a fuckable thing (this is the reciprocate tracking licking a cock rule):
 	if the actor encloses a face and the noun is enclosed by a person (called the individual):
-		now the individual previously fucks the face of the actor;
-		now the noun previously fucks the face of the actor.
+		now the individual previously-fucks the face of the actor;
+		now the noun previously-fucks the face of the actor.
 
 Section - Tracking Rubbing
 
 Rub-tracking relates various people to various things.
-The verb to previously rub (he previously rubs, they previously rub, he previously rubbed, it is previously rubbed, he is previously rubbing) implies the rub-tracking relation.
+The verb to previously-rub (he previously-rubs, they previously-rub, he previously-rubbed, it is previously-rubbed, he is previously-rubbing) implies the rub-tracking relation.
 
 Post-action bookkeeping an actor rubbing a body part (this is the track rubbing rule):
-	now the actor previously rubs the noun.
+	now the actor previously-rubs the noun.
 
 Section - Tracking Kissing
 
 Kiss-tracking relates various people to each other.
-The verb to previously kiss (he previously kisses, they previously kiss, he previously kissed, it is previously kissed, he is previously kissing) implies the kiss-tracking relation.
+The verb to previously-kiss (he previously-kisses, they previously-kiss, he previously-kissed, it is previously-kissed, he is previously-kissing) implies the kiss-tracking relation.
 
 Post-action bookkeeping an actor kissing a person (this is the track kissing rule):
-	now the actor previously kisses the noun.
+	now the actor previously-kisses the noun.
 
 Section - Phrases to Determine Prior Sexual Activity
 
 To decide if (N - a person) has fucked any part of (X - a person):
 	repeat with L running through sexable body parts incorporated by X:
-		if N previously fucks L:
+		if N previously-fucks L:
 			decide yes;
 	decide no.
 
 To decide if (N - a person) has licked any part of (X - a person):
 	repeat with L running through sexable body parts incorporated by X:
-		if N previously licks L:
+		if N previously-licks L:
 			decide yes;
 	decide no.
 
 To decide if (N - a person) has rubbed any part of (X - a person):
 	repeat with L running through sexable body parts incorporated by X:
-		if N previously rubs L:
+		if N previously-rubs L:
 			decide yes;
 	decide no.
 
@@ -1204,7 +1204,7 @@ To decide if any sexual activity occurred between (N - a person) with (X - a per
 	if N has fucked any part of X, decide yes;
 	if N has licked any part of X, decide yes;
 	if N has rubbed any part of X, decide yes;
-	if N previously kisses X, decide yes;
+	if N previously-kisses X, decide yes;
 	decide no.
 
 Chapter - Sex Scenes
@@ -1214,17 +1214,17 @@ A scene has a list of people called the involved partners.
 
 When a erotic scene (called K) begins:
 	repeat with P running through the involved partners of K:
-		now P previously fucks nothing;
+		now P previously-fucks nothing;
 		repeat with L running through body parts incorporated by P:
-			now L previously fucks nothing;
-		now P previously licks nothing;
-		now P previously rubs nothing;
-		now P previously kisses nothing;
+			now L previously-fucks nothing;
+		now P previously-licks nothing;
+		now P previously-rubs nothing;
+		now P previously-kisses nothing;
 		now P is sex ready;
-	now the player previously fucks nothing;
-	now the player previously licks nothing;
-	now the player previously rubs nothing;
-	now the player previously kisses nothing.
+	now the player previously-fucks nothing;
+	now the player previously-licks nothing;
+	now the player previously-rubs nothing;
+	now the player previously-kisses nothing.
 
 When an erotic scene (called K) ends:
 	repeat with P running through the involved partners of K:
@@ -1820,19 +1820,17 @@ This title of this extension is a bit misleading. There's no such thing a "simpl
 
 The documentation has been completely rewritten . The first part is a step-by-step tutorial for writing a full sex scene that goes over the basics of AIF writing. The second part is some documentation on how you can customize different aspects of the extension, including adding new body parts, actions and other things, and a discussion of some advanced features. The third part is a reference with a comprehensive index of various aspects of the extension. The fourth part is a repository of some optional plug-ins.
 
-Section: Important Update Information from Version 12
+Section: Important Update Information from Version 17
 
-The old library message is back in, but in slightly altered form. This time, it's easier to change the text of default messages. It is mostly managed through a table called the Table of Failure Responses. This will be covered in a later section of this documentation.
-
-Version 13 includes a new method for determining sexuality. The old method was pretty complex. Now there is a rulebook dedicated to determining whether sexual orientations are compatible. When making your own actions, use something like this:
-
-	Check fnarding:
-		unless the sex partner is the actor:
-			follow the sexual orientation rules;
-			if rule fails:
-				rule failed.
+Due to bugs with the compiler, the Layered Clothing Plugin does not work. You must use Advanced Layered Clothing.
 
 Section: Version Information
+
+	Version 17, September 17th, 2022
+	-- WE ARE LIVING IN THE FUTURE!
+	-- Made changes to allow for compilation in the newest version of Inform 7.
+	-- "previously fucked" changed to "previously-fucks", and added hypen to "previously-kiss", "previously-lick" and "previously-rub" etc.
+	-- Temporarily removed support for Simpler Clothes because of bugs with the compiler.
 
 	Version 16, February 10th, 2015
 	-- Fixed bug that doubles body parts when the player is not yourself at the beginning of the game (thanks to bug tester)
@@ -2014,12 +2012,12 @@ We can get more complicated though. The action repeat count records how many tim
 			say "Lilah does not look amused as she takes a load in her mouth. You smile at her guiltily.";
 			now the action repeat count is 0.
 
-After doing much of anything, the game will keep track of what you've done through a series of relations. These relations are: previously fuck, previously kiss, previously lick and previously rub, and track their respective actions.
+After doing much of anything, the game will keep track of what you've done through a series of relations. These relations are: previously-fuck, previously-kiss, previously-lick and previously-rub, and track their respective actions.
 
-	Instead of Lilah licking your cock when the player previously fucks Lilah's ass and Lilah is sex ready:
+	Instead of Lilah licking your cock when the player previously-fucks Lilah's ass and Lilah is sex ready:
 		say "'Duuuude,' she says, 'that thing has been in my [italic type]butt[roman type]!'"
 
-PLEASE NOTE THE USE OF THE PRESENT TENSE in "previously fucks", which is true for all the sex tracking relations. If you use the past tense (i.e. previously fucked), it holds true even if the tracking was cleared. This could be useful if you want a character to refer to a past sex scene.
+PLEASE NOTE THE USE OF THE PRESENT TENSE in "previously-fucks", which is true for all the sex tracking relations. If you use the past tense (i.e. previously-fucked), it holds true even if the tracking was cleared. This could be useful if you want a character to refer to a past sex scene.
 
 Sometimes it's more convenient for us to use an instead rule for a sex action, but we still don't want to treat it like a failure. For this purpose, we can use the "treat action as success" phrase, which, for recording purposes, will treat the action as a repeated action (it will not be recorded by a sex-tracking relation, however).
 
@@ -2219,7 +2217,7 @@ An example:
 A common feature in AIF is to have characters unwilling to do certain things until certain other actions have been completed. This is an easy way to do just that.
 
 	Willingness for fucking the bride's pussy with your cock:
-		unless the player previously fucks the bride's ass and the player previously licks the bride's pussy:
+		unless the player previously-fucks the bride's ass and the player previously licks the bride's pussy:
 			say "'Hmm... I guess we've gone this far... I'm sure if my fiance never finds out...'";
 			willing;
 		else:
@@ -2706,9 +2704,9 @@ Section: Phrase Reference
 	(KIND OF BODY PART) of (A PERSON)... object: returns a body part of the kind specified incorporated by the person, or nothing if nothing could be found.
 	if (PERSON) DOESN'T LIKE MEN...: returns true if the person is a heterosexual male or homosexual female.
 	if (PERSON) DOESN'T LIKE WOMEN...: returns true if the person is a heterosexual female or homosexual male.
-	if (PERSON) HAS FUCKED ANY PART OF (PERSON)...: returns true if the "previously fucks" relation holds between the first person and any of the second person's body parts.
-	if (PERSON) HAS LICKED ANY PART OF (PERSON)...: returns true if the "previously licks" relation holds between the first person and any of the second person's body parts.
-	if (PERSON) HAS RUBBED ANY PART OF (PERSON)...: returns true if the "previously rubs" relation holds between the first person and any of the second person's body parts.
+	if (PERSON) HAS FUCKED ANY PART OF (PERSON)...: returns true if the "previously-fucks" relation holds between the first person and any of the second person's body parts.
+	if (PERSON) HAS LICKED ANY PART OF (PERSON)...: returns true if the "previously-licks" relation holds between the first person and any of the second person's body parts.
+	if (PERSON) HAS RUBBED ANY PART OF (PERSON)...: returns true if the "previously-rubs" relation holds between the first person and any of the second person's body parts.
 	if (PERSON) IS ATTRACTED TO (PERSON)...: returns true when the character is sexually compatible with the second character.
 	if (PERSON) IS NOT ATTRACTED TO (PERSON)...: returns true when the character is not sexually compatible with the second character.
 	say DISPREFERRED GENDER OF (A PERSON)...: says either "men" or "women", depending on what the person doesn't like. Try not to use for bisexual characters.
