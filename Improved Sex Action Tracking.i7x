@@ -36,7 +36,7 @@ Post-action bookkeeping rule for an actor kissing a person:
 When an erotic scene (called the new scene) begins:
 	repeat with N running through the involved partners of the new scene:
 		repeat with K running through the body parts incorporated by N:
-			now K previously-interacts with nothing.
+			now K previously-interacts-with nothing.
 
 To decide if (K - a person) previously rubs/rub (N - a thing):
 	if the hands of K previously-interact-with N:
